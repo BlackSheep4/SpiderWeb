@@ -33,7 +33,10 @@ def banner():
     print(Style.RESET_ALL)
 
     
-
+def pressAny():
+    input('\n' + "Press any key to continue...")
+    os.system('clear')
+    
 def main():
     print('\n' + "Welcome to SpiderWeb v1 - Information Gathering Tool" + '\n')
 
@@ -73,17 +76,14 @@ def main():
                 ttl= int(ttl)
 
                 if ttl >= 0 and ttl <= 64:
-                    print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System: " + Fore.GREEN + "LINUX")
-                    print(Style.RESET_ALL)
+                    o_system = "LINUX"
                 elif ttl >= 65 and ttl <= 128:
-                    print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System: " + Fore.GREEN + "WINDOWS")
-                    print(Style.RESET_ALL)
+                    o_system = "WINDOWS"
                 else:
-                    print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System:" + Fore.GREEN + "UNKOWN")
-                    print(Style.RESET_ALL)
-                
-                input('\n' + "Press any key to continue...")
-                os.system('clear')
+                    o_system = "UNKNOWN"
+                print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server Operative System:" + Fore.GREEN + o_system)
+                print(Style.RESET_ALL)
+                pressAny()
             
             except (AttributeError):
                 print('\n')
@@ -91,8 +91,7 @@ def main():
 
         else:
             print('Please use this script in Linux OS')
-            input('\n' + "Press any key to continue...")
-            os.system('clear')
+            pressAny()
 
     elif option == 2:
 
@@ -123,8 +122,7 @@ def main():
         time.sleep(0.3)
         print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Address: " + str(w.get("address")))
 
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
 
     elif option == 3:
 
@@ -142,8 +140,7 @@ def main():
         time.sleep(0.3)
         print("[+] Google Maps Track: " + f"https://google.es/maps/@{latitude},{longitude},15z?hl=en")
 
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
 
     elif option == 4:
 
@@ -169,8 +166,7 @@ def main():
             print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "DNS Primary Zone: " + str(data.mname))
             time.sleep(0.3)
 
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
 
 
     elif option == 5:
@@ -192,8 +188,7 @@ def main():
         else:
             print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + f"Seems that {target} doesn´t have any robots.txt")
 
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
 
     elif option == 6:
 
@@ -209,8 +204,7 @@ def main():
             time.sleep(0.2)
             print(link.get('href'))
 
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
 
     elif option == 7:
 
@@ -223,8 +217,7 @@ def main():
         time.sleep(0.5)
         print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Server: " + str(server))
 
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
 
     elif option == 8:
 
@@ -242,8 +235,7 @@ def main():
             time.sleep(0.5)
             print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Technology Detected: {}".format(t))
         
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
     
     elif option == 9:
         target = str(input("[+] Phone Target (+12345678901) >> "))
@@ -257,8 +249,7 @@ def main():
         print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Carrier: " + str(carrier2))
         print(Fore.RED + "[" + Fore.GREEN + "+" + Fore.RED + "] " + Fore.WHITE + "Country: " + str(region))
 
-        input('\n' + "Press any key to continue...")
-        os.system('clear')
+        pressAny()
 
     elif option == 10:
         print(Fore.RED + "[" + Fore.GREEN + "!" + Fore.RED + "] " + Fore.WHITE + "Exiting")
